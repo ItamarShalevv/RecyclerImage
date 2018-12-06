@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RecyclerImage</string>
+    <string name="no_have_permission">No have permission to access the gallery</string>
+</resources>

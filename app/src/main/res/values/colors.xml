@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/colorBackgroundApp</color>
+    <color name="colorPrimaryDark">@color/colorBackgroundApp</color>
+    <color name="colorBackgroundApp">@android:color/white</color>
+
+    <color name="colorAccent">#D81B60</color>
+</resources>
