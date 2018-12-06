@@ -59,52 +59,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     }
-
-
-    private void getAllShownImagesPath2(Activity context) {
-        // which image properties are we querying
-        String[] projection = new String[]{
-                MediaStore.Images.Media._ID,
-                MediaStore.Images.Media.BUCKET_DISPLAY_NAME,
-                MediaStore.Images.Media.DATE_TAKEN
-        };
-
-// content:// style URI for the "primary" external storage volume
-        Uri images = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-
-// Make the query.
-        Cursor cur = managedQuery(images,
-                projection, // Which columns to return
-                null,       // Which rows to return (all rows)
-                null,       // Selection arguments (none)
-                null        // Ordering
-        );
-
-        Log.i("ListingImages", " query count=" + cur.getCount());
-
-        if (cur.moveToFirst()) {
-            String bucket;
-            String date;
-            int bucketColumn = cur.getColumnIndex(
-                    MediaStore.Images.Media.BUCKET_DISPLAY_NAME);
-
-            int dateColumn = cur.getColumnIndex(
-                    MediaStore.Images.Media.DATE_TAKEN);
-
-            do {
-                // Get the field values
-                bucket = cur.getString(bucketColumn);
-                date = cur.getString(dateColumn);
-
-                // Do something with the values.
-                Log.i("ListingImages", " bucket=" + bucket
-                        + "  date_taken=" + date);
-            } while (cur.moveToNext());
-
-        }
-
-    }
-
+    
     private List<String> getAllShownImagesPath(Activity context) {
 
         //  Uri uriForFile = FileProvider.getUriForFile(context, authority, new File(getCacheDir(), "/imagesCamera"));
